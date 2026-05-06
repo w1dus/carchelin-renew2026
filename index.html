@@ -23,6 +23,173 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.1/ScrollToPlugin.min.js"></script>
     </head>
     <body>
+        
+        <section class="apply-popup-section" style="display: none;">
+            <div class="content-wrap">
+                <div class="button-wrap">
+                    <button type="button" class="close-button close-popup">
+                        <img src="./img/apply-popup-section/close-icon.png" alt="closeBtn" class="icon">
+                    </button>
+                </div>
+                <div class="logo-wrap">
+                    <img src="./img/apply-popup-section/logo.png" alt="신차장기렌트 / 리스 맛집 카슐랭" class="logo">
+                </div>
+                <ul class="step-list">
+                    <li class="is-active">
+                        <div class="item">
+                            <div class="blue-text">신차 장기렌트 맛집 카슐랭</div>
+                            <div class="question-div">
+                                견적 받으실 상품의<br/>
+                                유형을 선택해주세요
+                            </div>
+                            <ul class="qna-list">
+                                <li>
+                                    <label class="label">
+                                        <input type="radio" name="wr_name" value="1">
+                                        <div class="radio-item">
+                                            <div class="text">장기렌트</div>
+                                            <img src="./img/apply-popup-section/q1-icon1.png" alt="장기렌트" class="icon">
+                                        </div>
+                                    </label>
+                                </li>
+                                <li>
+                                    <label class="label">
+                                        <input type="radio" name="wr_name" value="2">
+                                        <div class="radio-item">
+                                            <div class="text">리스</div>
+                                            <img src="./img/apply-popup-section/q1-icon2.png" alt="리스" class="icon">
+                                        </div>
+                                    </label>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="pagination-wrap">
+                            <div class="icon active"></div>
+                            <div class="icon"></div>
+                            <div class="icon"></div>
+                            <div class="icon"></div>
+                        </div>
+                    </li>
+                    <li class="">
+                        <div class="item">
+                            <div class="blue-text">신차 장기렌트 맛집 카슐랭</div>
+                            <div class="question-div">
+                                원하는 차량을<br/>
+                                입력해주세요
+                            </div>
+                            <div class="text-qna-box">
+                                <div class="q-text">
+                                    차종 입력
+                                </div>
+                                <div class="ipt-wrap">
+                                    <input type="text" name="wr_subject" placeholder="차종을 입력해주세요." class="ipt" />
+                                </div>
+                            </div>
+                            <div class="pn-btn-wrap">
+                                <button class="pn-btn prev-btn">이전단계</button>
+                                <button class="pn-btn next-btn">다음단계</button>
+                            </div>
+                        </div>
+                        <div class="pagination-wrap">
+                            <div class="icon"></div>
+                            <div class="icon active"></div>
+                            <div class="icon"></div>
+                            <div class="icon"></div>
+                        </div>
+                    </li>
+                    <li class="">
+                        <div class="item">
+                            <div class="blue-text">신차 장기렌트 맛집 카슐랭</div>
+                            <div class="question-div">
+                                견적서를 받으실 <br/>
+                                연락처를 입력해주세요
+                            </div>
+                            <div class="text-qna-box">
+                                <div class="q-text">
+                                    연락처
+                                </div>
+                                <div class="ipt-wrap">
+                                    <input type="text" name="wr_content" oninput="phoneNumberCheck(this)" placeholder="핸드폰 번호를 입력해주세요." class="ipt" />
+                                </div>
+                            </div>
+                            <div class="pn-btn-wrap">
+                                <button class="pn-btn prev-btn">이전단계</button>
+                                <button class="pn-btn next-btn">다음단계</button>
+                            </div>
+                        </div>
+                        <div class="pagination-wrap">
+                            <div class="icon"></div>
+                            <div class="icon"></div>
+                            <div class="icon active"></div>
+                            <div class="icon"></div>
+                        </div>
+                    </li>
+                    <li class="">
+                        <div class="item">
+                            <div class="blue-text">신차 장기렌트 맛집 카슐랭</div>
+                            <div class="question-div">
+                                개인정보처리방침에 동의해주세요
+                            </div>
+                            <div class="text-qna-box">
+                                <div class="agreeCheckDiv">
+                                    <label>
+                                        <input type="checkbox" id="agree1"/>
+                                        <div class="textBox">개인정보 수집, 이용, 제공 동의 <span class="privacyPopupBtn">(확인)</span></div>
+                                    </label>
+                                    
+                                </div>
+                                <div class="agreeCheckDiv">
+                                    <label>
+                                        <input type="checkbox" id="agree2"/>
+                                        <div class="textBox">개인정보 제 3자 제공 동의<span class="privacyPopupBtn">(확인)</span></div>
+                                    </label>
+                                </div>
+                                <div class="agreeCheckDiv">
+                                    <label>
+                                        <input type="checkbox" id="agree3"/>
+                                        <div class="textBox">마케팅 활용 및 광고성 정보수신 동의 <span class="privacyPopupBtn">(확인)</span></div>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="pn-btn-wrap">
+                                <button class="pn-btn prev-btn">이전단계</button>
+                                <button class="pn-btn next-btn">다음단계</button>
+                            </div>
+                        </div>
+                        <div class="pagination-wrap">
+                            <div class="icon"></div>
+                            <div class="icon"></div>
+                            <div class="icon active"></div>
+                            <div class="icon"></div>
+                        </div>
+                    </li>
+                    <li class="">
+                        <div class="item">
+                            <div class="blue-text center">신차 장기렌트 맛집 카슐랭</div>
+                            <div class="question-div center">
+                                카슐랭 견적 신청이<br/>
+                                완료되었습니다.
+                            </div>
+                            <div class="text-qna-box">
+                                <img src="./img/apply-popup-section/result-icon.png" alt="완료" class="result-icon">
+                            </div>
+                            <div class="pn-btn-wrap full">
+                                <button class="pn-btn close-btn close-popup">홈페이지 바로가기</button>
+                            </div>
+                        </div>
+                        <div class="pagination-wrap">
+                            <div class="icon"></div>
+                            <div class="icon"></div>
+                            <div class="icon"></div>
+                            <div class="icon active"></div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section> 
+
+
+
         <main id="smooth-wrapper">
             <article id="smooth-content">
                 
