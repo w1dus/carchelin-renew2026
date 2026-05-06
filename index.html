@@ -8,12 +8,10 @@
         <link rel="stylesheet" href="./style/default.css">
         <link rel="stylesheet" href="./style/font.css">
         <link rel="stylesheet" href="./style/style.css">
-        <link rel="stylesheet" href="./style/swiper.min.css">
         <link rel="stylesheet" href="./style/animation.css">
         <link rel="stylesheet" href="./style/customBoard.css">
         <!--스크립트-->
         <script type="text/javascript" src="./script/script.js"></script>
-        <script type="text/javascript" src="./script/swiper.min.js"></script>
         <script type="text/javascript" src="./script/customBoard.js"></script>
         <script type="text/javascript" src="./script/common_jp.js"></script>
         <!-- 패럴렉스 -->
@@ -21,6 +19,9 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.1/ScrollToPlugin.min.js"></script>
+        <!--swiper-->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12.1.2/swiper-bundle.min.css" />
+        <script src="https://cdn.jsdelivr.net/npm/swiper@12.1.2/swiper-bundle.min.js"></script>
     </head>
     <body>
         
@@ -188,7 +189,85 @@
             </div>
         </section> 
 
+        <section class="event-popup-section" style="display: none;">
+            <article class="popup-wrap">
+                <img src="./img/event-popup-section/popup-img.png" alt="event-popup-bg" class="popup-content">
+                <div class="btn-wrap">
+                    <button type="button" class="close-btn btn-item">닫기</button>
+                    <a href="#" class="more-btn btn-item">자세히 보기</a>
+                </div>
+            </article>
+        </section>
 
+        <!--헤더 { -->
+        <header>
+            <div class="top-div">
+                <div class="inner">
+                    <div class="logo-div">
+                        <a href="./index.html">
+                            <img src="./img/header/logo.png" alt="신차장기렌트 / 리스 맛집" class="logo">
+                        </a>
+                    </div>
+                    <button type="button" class="menu-btn">
+                        <img src="./img/header/menu-icon.png" alt="menu-icon" class="icon">
+                    </button>
+                </div>
+            </div>
+            <div class="menu-div">
+                <div class="inner">
+                    <div class="swiper mySwiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <a href="#"><div class="item">회사소개</div></a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="#"><div class="item">내 차 만들기</div></a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="#"><div class="item">카플래너</div></a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="#"><div class="item">출고후기</div></a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="#"><div class="item">이벤트</div></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- }-->
+
+        <!-- aside 메뉴 { -->
+        <section class="aside-menu">
+            <div class="menu-wrap">
+                <div class="btn-div">
+                    <button type="button" class="close-btn">
+                        <img src="./img/aside-menu/close-icon.png" alt="close-icon" class="icon">
+                    </button>
+                </div>
+                <div class="text-div">
+                    신차 장기 렌트 맛집!
+                    <span class="blue">카슐랭이 함께 합니다!</span>
+                </div>
+                <div class="btn-div">
+                    <a href="#" class="btn-item kakao-item">
+                        카카오 문의
+                    </a>
+                    <a href="#" class="btn-item tel-item">
+                        전화 문의
+                    </a>
+                </div>
+                <ul class="menu-list">
+                    <li>
+                        <a href="#"><div class="item">회사소개</div></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="close-bg"></div>
+        </section>
+        <!-- } -->
 
         <main id="smooth-wrapper">
             <article id="smooth-content">

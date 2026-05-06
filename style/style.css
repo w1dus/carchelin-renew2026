@@ -34,6 +34,7 @@ body{ font-family: 'Pretendard', sans-serif; font-weight:400; font-size: 16px; l
 section{ display:block; }
 a{ color:inherit; }
 a:hover{ text-decoration: none; color: inherit;  }
+.blue{ color: #1675E7; }
 
 .inner{ width:1200px; margin:0 auto;  }
 
@@ -123,4 +124,33 @@ p{ word-break: keep-all; }
     .apply-popup-section .text-qna-box .q-text{ font-size: 16px; }
     .apply-popup-section .text-qna-box .ipt-wrap .ipt{ font-size: 16px; }
     .apply-popup-section .pn-btn-wrap .pn-btn{ font-size: 16px; padding: 13px; }
+}
+
+.event-popup-section{ padding: 20px; position: fixed; z-index: 999; left: 0; top: 0; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: rgba(0, 0, 0, 0.30); }
+.event-popup-section .popup-wrap{ position: relative; width: 100%; max-width: 420px; }
+.event-popup-section .popup-wrap .popup-content{ max-width: 100%; }
+.event-popup-section .popup-wrap .btn-wrap{ padding: 10px; position: absolute; left: 0; bottom: 0; width: 100%; display: grid; grid-template-columns: repeat(2,1fr); grid-gap: 10px; } 
+.event-popup-section .popup-wrap .btn-wrap .btn-item{ padding: 12px 10px; border-radius: 50px; border: none; background: rgba(255, 255, 255, 0.80); text-align: center; font-weight: 500; color: #777; font-size: 18px; }
+.event-popup-section .popup-wrap .btn-wrap .btn-item.close-btn{ background: rgba(255, 255, 255, 0.80); }
+.event-popup-section .popup-wrap .btn-wrap .btn-item.more-btn{ background: rgba(22, 117, 231, 0.80); color: #fff; }
+
+@media screen and (max-width: 650px) { 
+    .event-popup-section .popup-wrap .btn-wrap .btn-item{ font-size: 16px; }
+}
+
+/* header */
+header{ border-bottom: 1px solid #DDD; position: fixed; left: 0; top: 0; width: 100%; background-color: #fff; z-index: 99; }
+header .inner{ display: flex; align-items: center; justify-content: space-between; }
+header .top-div{ padding: 20px 0 0 0; }
+header .logo{ width: 100px; }
+header .menu-btn{ background: transparent; border: none;  }
+header .menu-btn .icon{ width: 25px; }
+header .menu-div { font-size: 18px; padding: 20px; padding-left: 20px; }
+header .menu-div .swiper:not(.swiper-watch-progress){ margin: 0; }
+header .menu-div .swiper-slide { width: auto; flex-shrink: 0; }
+
+@media screen and (max-width: 650px) { 
+    header .logo{ width: 80px; }
+    header .top-div{ padding-top: 10px; }
+    header .menu-div{ padding: 10px 5px; padding-right: 0; font-size: 16px; }
 }

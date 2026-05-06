@@ -2,7 +2,33 @@
 
 document.addEventListener("DOMContentLoaded", function(e){
     popupApplyHandler();
+    popupEventHandler();
+    headerMenuSlideHandler();
 })
+
+const headerMenuSlideHandler = () => {
+    var swiper = new Swiper("header .menu-div .mySwiper", {
+        slidesPerView: "auto",
+        spaceBetween: 30,
+        centeredSlides: false,
+        freeMode: true,      // 메뉴 드래그 느낌
+        watchOverflow: true, // 넘치지 않으면 비활성
+        breakpoints: {
+            0: {
+                spaceBetween: 16,
+            },650: {
+                spaceBetween: 30,
+            },
+        },
+    });
+}
+
+const popupEventHandler = () => {
+    $('.event-popup-section .close-btn').click(function(){
+        $('.event-popup-section').hide();
+    });
+}
+
 
 const phoneNumberCheck = (phoneNumber) => {
     $(document).on('input', 'input[name="wr_content"]', function () {
