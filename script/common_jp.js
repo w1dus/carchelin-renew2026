@@ -19,6 +19,12 @@ const privacyUsePopup = () => {
     $('.usePopupBtn').click(function(){
         $('#usePopup').addClass('active');
     })
+    $('.privacy3rdPopupBtn').click(function(){
+        $('#privacy3rdPopup').addClass('active');
+    })
+    $('.marketingPopupBtn').click(function(){
+        $('#marketingPopup').addClass('active');
+    })
     $('.privacyPopup .contentWrap .titleBox .closeBtn').click(function(){
         $('.privacyPopup').removeClass('active')
     })
