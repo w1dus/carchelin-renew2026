@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/jquery.marquee@1.6.1/jquery.marquee.min.js"></script>
+        <!--스타일-->
+        <link rel="stylesheet" href="./style/default.css">
+        <link rel="stylesheet" href="./style/font.css">
+        <link rel="stylesheet" href="./style/style.css">
+        <link rel="stylesheet" href="./style/animation.css">
+        <link rel="stylesheet" href="./style/customBoard.css">
+        <!--스크립트-->
+        <script type="text/javascript" src="./script/script.js"></script>
+        <script type="text/javascript" src="./script/customBoard.js"></script>
+        <script type="text/javascript" src="./script/common_jp.js"></script>
+        <!-- 패럴렉스 -->
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollSmoother.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.1/ScrollToPlugin.min.js"></script>
+        <!--swiper-->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12.1.2/swiper-bundle.min.css" />
+        <script src="https://cdn.jsdelivr.net/npm/swiper@12.1.2/swiper-bundle.min.js"></script>
+    </head>
+    <body>
+
+        <!--헤더 { -->
+        <header>
+            <div class="top-div">
+                <div class="inner">
+                    <div class="logo-div">
+                        <a href="./index.html">
+                            <img src="./img/header/logo.png" alt="신차장기렌트 / 리스 맛집" class="logo">
+                        </a>
+                    </div>
+                    <button type="button" class="menu-btn">
+                        <img src="./img/header/menu-icon.png" alt="menu-icon" class="icon">
+                    </button>
+                </div>
+            </div>
+            <div class="menu-div">
+                <div class="inner">
+                    <div class="swiper mySwiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <a href="./about-us.html"><div class="item">회사소개</div></a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="./make-car.html"><div class="item">내 차 만들기</div></a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="./car-planner.html"><div class="item">카플래너</div></a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="./car-review.html"><div class="item">출고후기</div></a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="./car-event.html"><div class="item">이벤트</div></a>
+                            </div>
+                            <div class="swiper-slide"> 
+                                <a href="./car-rental.html"><div class="item">장기렌트 · 리스혜택</div></a> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- }-->
+
+        <!-- aside 메뉴 { -->
+        <section class="aside-menu">
+            <div class="close-bg"></div>
+            <div class="menu-wrap">
+                <div class="btn-div">
+                    <button type="button" class="close-btn">
+                        <img src="./img/aside-menu/close-icon.svg" alt="close-icon" class="icon">
+                    </button>
+                </div>
+                <div class="text-div">
+                    신차 장기 렌트 맛집!<br/>
+                    <span class="blue">카슐랭이 함께 합니다!</span>
+                </div>
+                <div class="apply-btn-div">
+                    <a href="#" class="btn-item kakao-item">
+                        카카오 문의
+                    </a>
+                    <a href="#" class="btn-item tel-item">
+                        전화 문의
+                    </a>
+                </div>
+                <ul class="menu-list">
+                    <li>
+                        <a href="./about-us.html">
+                            <div class="item">
+                                <div class="text">회사소개</div>
+                                <img src="./img/aside-menu/link-arrow.png" alt="link-icon" class="icon">
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./make-car.html">
+                            <div class="item">
+                                <div class="text">내 차 만들기</div>
+                                <img src="./img/aside-menu/link-arrow.png" alt="link-icon" class="icon">
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./car-planner.html">
+                            <div class="item">
+                                <div class="text">카플래너</div>
+                                <img src="./img/aside-menu/link-arrow.png" alt="link-icon" class="icon">
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./car-review.html">
+                            <div class="item">
+                                <div class="text">출고후기</div>
+                                <img src="./img/aside-menu/link-arrow.png" alt="link-icon" class="icon">
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./car-event.html">
+                            <div class="item">
+                                <div class="text">이벤트</div>
+                                <img src="./img/aside-menu/link-arrow.png" alt="link-icon" class="icon">
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./car-rental.html">
+                            <div class="item">
+                                <div class="text">장기렌트 · 리스혜택</div>
+                                <img src="./img/aside-menu/link-arrow.png" alt="link-icon" class="icon">
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <!-- } -->
+
+        <main id="smooth-wrapper">
+            <article id="smooth-content">
+                <main class="sub sec_top car-rental-detail">
+                    
+                    <article class="content-arti">
+                       <div class="inner">
+                            <section class="boardArti boardViewArti">
+                                <article class="infoBoxWrap">
+                                    <ul class="infoBoxList">
+                                        <li class="full">
+                                            <div class="infoBox">
+                                                <div class="label">제목</div>
+                                                <div class="txtBox viewBox">
+                                                    <div class="txt">
+                                                        제목 영역입니다. 홈페이지가 오픈하였습니다. 제목 영역입니다. 홈페이지가 오픈하였습니다. 제목 영역입니다. 홈페이지가 오픈하였습니다.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="infoBox">
+                                                <div class="label">이름</div>
+                                                <div class="txtBox viewBox">
+                                                    <div class="txt">
+                                                        최고관리자
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="infoBox">
+                                                <div class="label">조회</div>
+                                                <div class="txtBox viewBox">
+                                                    <div class="txt">
+                                                        9,999
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="infoBox">
+                                                <div class="label">날짜</div>
+                                                <div class="txtBox viewBox">
+                                                    <div class="txt">
+                                                        20-05-18 13:22
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    
+                                    </ul>
+                                </article>
+                
+                                <div class="menuBox">
+                                    <ul class="menuList">
+                                        <li>
+                                            <a href="./car-event.html" class="item"><img src="./img/boardImg/list.png" alt="목록"/> <p class="txt">목록</p></a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="item"><img src="./img/boardImg/corner-up-left.png" alt="답변"/> <p class="txt">답변</p></a>
+                                        </li>
+                                        <li>
+                                            <a href="./write.html" class="item"><img src="./img/boardImg/write.png" alt="글쓰기"/> <p class="txt">글쓰기</p></a>
+                                        </li>
+                                        <li>
+                                            <button type="button" class="item"><img src="./img/boardImg/threedot.png" alt="편집"/> <p class="txt">편집</p></button>
+                                            <ul class="subMenu">
+                                                <li><a href="#" class="item2">수정</a></li>
+                                                <li><a href="#" class="item2">삭제</a></li>
+                                                <li><a href="#" class="item2">복사</a></li>
+                                                <li><a href="#" class="item2">이동</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                
+                                <article class="viewContent">
+                                    어떤 디자이너들은 명쾌한 방법론을 갈망하는 한편, 어떤 디자이너들은 창의적인 발상을 제약하는 사고 방식이라며 발끈하기도 한다. <br/>
+                                    하지만, 혼란스럽거나 즉흥적인 접근 방식은 바람직하다고 이야기하기 어렵다. <br/>
+                                    여기서 설명하고 있는 방법론은 제약적인 프로세스라기보다는 모든 상황에서 따라 할 수 있는 조리법처럼 받아들여지기를 바란다. <br/>
+                                    하지만 기계적으로 따라야만 하는 방법은 없다. <br/>
+                                    디자이너의 창의적인 번뜩임은 전기와 같고 그 방법은 전기를 가장 잘 이용할 수 있는 곳으로 전달하는 전력망 이라고 상상해보자.
+                                </article>
+                
+                                <article class="viewAddArti">
+                                    <a href="#">
+                                        <div class="item file">
+                                            <p class="t1">File.jpeg(741.5K)</p>
+                                            <p class="t2">1회 다운로드 | DATE : 2020-05-05- 17:05:20</p>
+                                        </div>
+                                    </a>
+                                    <a href="#">
+                                        <div class="item link">
+                                            <p class="t1">http://www.link.com</p>
+                                            <p class="t2">34회 연결</p>
+                                        </div>
+                                    </a>
+                                </article>
+                
+                                <article class="prevNextArti">
+                                    <div class="item">
+                                        <div class="label">
+                                            <img src="./img/boardImg/chevron-up.png" alt="이전글" />
+                                            이전글
+                                        </div>
+                                        <div class="titleBox">
+                                            <a href="#">
+                                                이전글 제목입니다.이전글 제목입니다.이전글 제목입니다.이전글 제목입니다.이전글 제목입니다.이전글 제목입니다.이전글 제목입니다.이전글 제목입니다.
+                                                이전글 제목입니다.이전글 제목입니다.이전글 제목입니다.이전글 제목입니다.이전글 제목입니다.
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="label">
+                                            <img src="./img/boardImg/chevron-down.png" alt="다음글" />
+                                            다음글
+                                        </div>
+                                        <div class="titleBox">
+                                            <a href="#">
+                                                다음글 제목입니다.다음글 제목입니다.다음글 제목입니다.다음글 제목입니다.다음글 제목입니다.다음글 제목입니다.다음글 제목입니다.다음글 제목입니다.
+                                                다음글 제목입니다.다음글 제목입니다.다음글 제목입니다.다음글 제목입니다.
+                                            </a>
+                                        </div>
+                                    </div>
+                                </article>
+                            </section>
+                       </div>
+                    </article>
+
+
+                    <footer class="footer">
+                        <div class="inner">
+                            <img src="./img/footer/logo.png" alt="카슐랭 푸터 로고" class="logo">
+                            <div class="info-text-div">
+                                카슐랭은 20개 이상의 제휴 렌트사·캐피탈사와 함께<br/>
+                                투명한 견적 비교와 최적의 조건을 제공합니다.<br/>
+                                믿을 수 있는 사후 관리와 빠른 출고로<br/>
+                                합리적인 차량 이용을 지원합니다.
+                            </div>
+                            <ul class="menu-list">
+                                <li>
+                                    <a href="#"><div class="item">차량안내</div></a>
+                                </li>
+                                <li>
+                                    <a href="./make-car.html"><div class="item">내 차 만들기</div></a>
+                                </li>
+                                <li>
+                                    <a href="./car-event.html"><div class="item">이벤트</div></a>
+                                </li>
+                                <li>
+                                    <a href="./car-review.html"><div class="item">출고후기</div></a>
+                                </li>
+                                <li>
+                                    <a href="./car-planner.html"><div class="item">카플래너</div></a>
+                                </li>
+                                <li>
+                                    <a href="./car-rental.html"><div class="item">장기렌트 · 리스혜택</div></a>
+                                </li>
+                            </ul>
+
+                            <div class="company-info">
+                                <p>상호명 : 카슐랭</p>
+                                <p>대표자명 : 채수현</p>
+                                <p><a href="#" class="privacyPopupBtn">개인정보처리방침</a></p>
+                            </div>
+                            <div class="company-number">
+                                사업자등록번호 : 645-35-01032
+                            </div>
+                            <div class="copy-right">
+                                © carchelin. All rights reserved.
+                            </div>
+                    </footer>
+                    <!-- } -->
+
+                </main>
+            </article>
+        </main>
+
+
+
+         <!-- 우수 사원에게 상담받기 { -->
+         <section class="excellence-apply-popup"> <!--show 클래스 붙이면 노출-->
+            <article class="content-arti">
+                <img src="./img/excellence-apply-popup/label.png" alt="우수 사원에게 상담받기" class="label-img">
+                <div class="title">오동규 우수사원에게 상담받기</div>
+                <div class="content">선택하신 담당자가 직접 상담을 도와드립니다.</div>
+                <ul class="form-list">
+                    <li>
+                        <div class="label">이름</div>
+                        <div class="ipt-div">
+                            <input type="text" name="wr_name" required placeholder="이름을 입력해주세요" class="ipt">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="label">연락처</div>
+                        <div class="ipt-div">
+                            <input type="text" name="wr_subject" required placeholder="핸드폰 번호를 입력해주세요" class="ipt" oninput="phoneNumberCheck(this)">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="label">차종</div>
+                        <div class="ipt-div">
+                            <input type="text" name="wr_content" required placeholder="차종을 입력해주세요" class="ipt">
+                        </div>
+                    </li>
+                </ul>
+
+                <div class="agreeCheckDiv">
+                    <label>
+                        <input type="checkbox" id="agree1"/>
+                        <div class="textBox">개인정보 수집, 이용, 제공 동의 <span class="privacyPopupBtn">(확인)</span></div>
+                    </label>
+                    
+                </div>
+                <div class="agreeCheckDiv">
+                    <label>
+                        <input type="checkbox" id="agree2"/>
+                        <div class="textBox">개인정보 제 3자 제공 동의<span class="privacy3rdPopupBtn">(확인)</span></div>
+                    </label>
+                </div>
+                <div class="agreeCheckDiv">
+                    <label>
+                        <input type="checkbox" id="agree3"/>
+                        <div class="textBox">마케팅 활용 및 광고성 정보수신 동의 <span class="marketingPopupBtn">(확인)</span></div>
+                    </label>
+                </div>
+
+                <div class="btn-wrap">
+                    <button type="button" class="close-btn bottom-btn">닫기</button>
+                    <button type="button" class="apply-btn bottom-btn">상담받기</button>
+                </div>
+            </article>
+        </section>
+        <!-- }-->
+
+        <script>
+            $(document).ready(function(){
+                $('.apply-btn').click(function(){
+                    $('.excellence-apply-popup').addClass('show');
+                });
+            });
+        </script>
+
+
+        <!--개인정보처리방침 { -->
+        <section class="privacyPopup" id="privacyPopup">
+            <div class="inner">
+                <div class="contentWrap">
+                    <div class="titleBox">
+                        <span>개인정보 처리방침</span>
+                        <img src="./img/common/close-btn.png" alt="closeBtn" class="closeBtn">
+                    </div>
+                    <div class="contentBox">
+                        해당 홈페이지에 맞는 개인정보처리방침을 입력합니다.           
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- } -->
+
+        <!--개인정보 제 3자 제공 동의 { -->
+        <section class="privacyPopup" id="privacy3rdPopup">
+            <div class="inner">
+                <div class="contentWrap">
+                    <div class="titleBox">
+                        <span>개인정보 제 3자 동의</span>
+                        <img src="./img/common/close-btn.png" alt="closeBtn" class="closeBtn">
+                    </div>
+                    <div class="contentBox">
+                        해당 홈페이지에 맞는 개인정보 제 3자 동의 내용을 입력합니다.           
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--}-->
+
+        <!-- 마케팅 활용 및 광고성 정보수신 동의 { -->
+        <section class="privacyPopup" id="marketingPopup">
+            <div class="inner">
+                <div class="contentWrap">
+                    <div class="titleBox">
+                        <span>마케팅 활용 및 광고성 정보수신 동의</span>
+                        <img src="./img/common/close-btn.png" alt="closeBtn" class="closeBtn">
+                    </div>
+                    <div class="contentBox">
+                        해당 홈페이지에 맞는 마케팅 활용 및 광고성 정보수신 동의 내용을 입력합니다.           
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- } -->
+
+    </body>
+</html>

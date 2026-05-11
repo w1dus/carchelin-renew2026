@@ -12,19 +12,150 @@ document.addEventListener("DOMContentLoaded", function(e){
     mainBestcarSlideHandler();
     mainCarpriceSlideHandler();
     mainReviewSlideHandler();
+    mainCarBrandSlideHandler();
+    mainFaqSlideHandler();
+    partnerSlideHandler();
+    excellenceApplyPopupHandler();
+    floatingApplyHandler();
+    carDetailSlideHandler();
 })
+
+const carDetailSlideHandler = () => {
+    var swiper = new Swiper(".sub.car-detail .section5 .swiper", {
+        slidesPerView: "auto",
+        spaceBetween: 20,
+        loop: true,
+        watchOverflow: false,
+        autoplay: {
+            delay: 5000,
+            disableOnInteraction: false,
+        },
+    });
+}
+
+const floatingApplyHandler = () => {
+    const $floating = $('.floating-apply-section');
+    if (!$floating.length) return;
+
+    const checkScrollEnd = () => {
+        const scrollTop = $(window).scrollTop();
+        const windowHeight = $(window).height();
+        const docHeight = $(document).height();
+
+        // 스크롤이 맨 끝에 닿으면 숨김 (100px 오차 허용)
+        if (scrollTop + windowHeight >= docHeight - 100) {
+            $floating.hide();
+        } else {
+            $floating.show();
+        }
+    }
+
+    $(window).on('scroll resize', checkScrollEnd);
+    checkScrollEnd();
+}
+
+const excellenceApplyPopupHandler = () => {
+    //팝업 닫기
+    $('.excellence-apply-popup .content-arti .btn-wrap .bottom-btn.close-btn').click(function(){
+        $('.excellence-apply-popup').removeClass('show');
+    });
+}
+
+const partnerSlideHandler = () => {
+    if (!$.fn.marquee) return;
+
+    var marqueePaused1 = false;
+    var marqueePaused2 = false;
+
+    var marquee1 = $(".main .partner-section .slide-div .logo-list.type1").marquee({
+        duration: 25000,
+        delayBeforeStart: 500,
+        direction: "right",
+        startVisible: true,
+        duplicated: true,
+        gap: 20,
+    });
+
+    var marquee2 = $(".main .partner-section .slide-div .logo-list.type2").marquee({
+        duration: 25000,
+        delayBeforeStart: 500,
+        direction: "left",
+        startVisible: true,
+        duplicated: true,
+        gap: 20,
+    });
+
+    $(".main .partner-section .slide-div .logo-list.type1").on("mouseenter", ".logo-item", function () {
+        if (!marqueePaused1) marquee1.marquee("pause");
+    });
+    $(".main .partner-section .slide-div .logo-list.type1").on("mouseleave", ".logo-item", function () {
+        if (!marqueePaused1) marquee1.marquee("resume");
+    });
+
+    $(".main .partner-section .slide-div .logo-list.type2").on("mouseenter", ".logo-item", function () {
+        if (!marqueePaused2) marquee2.marquee("pause");
+    });
+    $(".main .partner-section .slide-div .logo-list.type2").on("mouseleave", ".logo-item", function () {
+        if (!marqueePaused2) marquee2.marquee("resume");
+    });
+}
+
+const mainFaqSlideHandler = () => {
+    $('.main .faq-section .faq-list .qna-box.q-box').click(function(){
+        $(this).closest('li').toggleClass('is-active');
+        $(this).closest('li').find('.qna-box.a-box').slideToggle();
+    })
+}
+
+const mainCarBrandSlideHandler = () => {
+    //브랜드 슬라이드
+    $('.main .carprice-section .main-tab-content .car-brand-tab .swiper').each(function () {
+        new Swiper(this, {
+            slidesPerView: "auto",
+            spaceBetween: 10,
+            loop: true,
+            watchOverflow: false,
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+            },
+        });
+    });
+
+    // 탭, 컨텐츠
+    $('.main .car-brand-section .main-tab-list .item').click(function(){
+        const $list = $(this).closest('.main-tab-list');
+        const $content = $list.next('.main-tab-content');
+        const index = $(this).closest('li').index();
+
+        // 같은 탭 리스트 안에서만 토글
+        $list.find('.item').removeClass('is-active');
+        $(this).addClass('is-active');
+
+        // 짝이 되는 컨텐츠도 토글
+        $content.children('li').removeClass('is-active');
+        $content.children('li').eq(index).addClass('is-active');
+    });
+
+}
 
 const mainReviewSlideHandler = () => {
     var swiper = new Swiper(".main .review-section .swiper", {
         slidesPerView: "auto",
-        spaceBetween: 30,
+        loop : true,
+        spaceBetween: 20,
+        autoplay:{
+            delay: 5000,
+            disableOnInteraction: false,
+        }
     });
 }
 
 const mainCarpriceSlideHandler = () => {
-   var swiper = new Swiper(".main .carprice-section .swiper", {
+    //내용 슬라이드
+   var swiper = new Swiper(".main .carprice-section .main-tab-content .slide-div .swiper", {
         slidesPerView: "auto",
-        spaceBetween: 10,
+        spaceBetween: 20,
         loop: true,
         watchOverflow: false,
         autoplay: {
@@ -87,6 +218,10 @@ const mainYoutubeSlideHandler = () => {
         spaceBetween: 30,
         watchOverflow: false,
         loop: true,
+        allowTouchMove: true,
+        simulateTouch: true,
+        grabCursor: true,
+        touchStartPreventDefault: false,
         autoplay: {
             delay: 5000,
             disableOnInteraction: false,
@@ -255,26 +390,22 @@ const popupEventHandler = () => {
 }
 
 
-const phoneNumberCheck = (phoneNumber) => {
-    $(document).on('input', 'input[name="wr_content"]', function () {
-        // 숫자만 남기기
-        let v = this.value.replace(/\D/g, '');
-      
-        // 최대 11자리까지만 (01012345678)
-        if (v.length > 11) v = v.slice(0, 11);
-      
-        // 02(서울) 같은 특이 케이스는 빼고, 요청하신 010/01x 기준으로 10~11자리만 처리
-        // 11자리: 010-1234-5678
-        if (v.length >= 8) {
-          // 10자리면 3-3-4, 11자리면 3-4-4
-          const midLen = (v.length === 10) ? 3 : 4;
-          this.value = v.replace(new RegExp(`^(\\d{3})(\\d{${midLen}})(\\d{4})$`), '$1-$2-$3');
-        } else if (v.length >= 4) {
-          this.value = v.replace(/^(\d{3})(\d+)$/, '$1-$2'); // 010-xxxx
-        } else {
-          this.value = v; // 0~3자리
-        }
-    });
+const phoneNumberCheck = (input) => {
+    // 숫자만 남기기
+    let v = input.value.replace(/\D/g, '');
+
+    // 최대 11자리까지만 (01012345678)
+    if (v.length > 11) v = v.slice(0, 11);
+
+    // 10자리면 3-3-4, 11자리면 3-4-4
+    if (v.length >= 8) {
+        const midLen = (v.length === 10) ? 3 : 4;
+        input.value = v.replace(new RegExp(`^(\\d{3})(\\d{${midLen}})(\\d{4})$`), '$1-$2-$3');
+    } else if (v.length >= 4) {
+        input.value = v.replace(/^(\d{3})(\d+)$/, '$1-$2'); // 010-xxxx
+    } else {
+        input.value = v; // 0~3자리
+    }
 }
 
 const popupApplyHandler = () => {

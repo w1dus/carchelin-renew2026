@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/jquery.marquee@1.6.1/jquery.marquee.min.js"></script>
+        <!--스타일-->
+        <link rel="stylesheet" href="./style/default.css">
+        <link rel="stylesheet" href="./style/font.css">
+        <link rel="stylesheet" href="./style/style.css">
+        <link rel="stylesheet" href="./style/animation.css">
+        <link rel="stylesheet" href="./style/customBoard.css">
+        <!--스크립트-->
+        <script type="text/javascript" src="./script/script.js"></script>
+        <script type="text/javascript" src="./script/customBoard.js"></script>
+        <script type="text/javascript" src="./script/common_jp.js"></script>
+        <!-- 패럴렉스 -->
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollSmoother.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.1/ScrollToPlugin.min.js"></script>
+        <!--swiper-->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12.1.2/swiper-bundle.min.css" />
+        <script src="https://cdn.jsdelivr.net/npm/swiper@12.1.2/swiper-bundle.min.js"></script>
+    </head>
+    <body>
+
+        <!--헤더 { -->
+        <header>
+            <div class="top-div">
+                <div class="inner">
+                    <div class="logo-div">
+                        <a href="./index.html">
+                            <img src="./img/header/logo.png" alt="신차장기렌트 / 리스 맛집" class="logo">
+                        </a>
+                    </div>
+                    <button type="button" class="menu-btn">
+                        <img src="./img/header/menu-icon.png" alt="menu-icon" class="icon">
+                    </button>
+                </div>
+            </div>
+            <div class="menu-div">
+                <div class="inner">
+                    <div class="swiper mySwiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <a href="./about-us.html"><div class="item">회사소개</div></a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="./make-car.html"><div class="item">내 차 만들기</div></a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="./car-planner.html"><div class="item">카플래너</div></a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="./car-review.html"><div class="item">출고후기</div></a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="./car-event.html"><div class="item">이벤트</div></a>
+                            </div>
+                            <div class="swiper-slide"> 
+                                <a href="./car-rental.html"><div class="item">장기렌트 · 리스혜택</div></a> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- }-->
+
+        <!-- aside 메뉴 { -->
+        <section class="aside-menu">
+            <div class="close-bg"></div>
+            <div class="menu-wrap">
+                <div class="btn-div">
+                    <button type="button" class="close-btn">
+                        <img src="./img/aside-menu/close-icon.svg" alt="close-icon" class="icon">
+                    </button>
+                </div>
+                <div class="text-div">
+                    신차 장기 렌트 맛집!<br/>
+                    <span class="blue">카슐랭이 함께 합니다!</span>
+                </div>
+                <div class="apply-btn-div">
+                    <a href="#" class="btn-item kakao-item">
+                        카카오 문의
+                    </a>
+                    <a href="#" class="btn-item tel-item">
+                        전화 문의
+                    </a>
+                </div>
+                <ul class="menu-list">
+                    <li>
+                        <a href="./about-us.html">
+                            <div class="item">
+                                <div class="text">회사소개</div>
+                                <img src="./img/aside-menu/link-arrow.png" alt="link-icon" class="icon">
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./make-car.html">
+                            <div class="item">
+                                <div class="text">내 차 만들기</div>
+                                <img src="./img/aside-menu/link-arrow.png" alt="link-icon" class="icon">
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./car-planner.html">
+                            <div class="item">
+                                <div class="text">카플래너</div>
+                                <img src="./img/aside-menu/link-arrow.png" alt="link-icon" class="icon">
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./car-review.html">
+                            <div class="item">
+                                <div class="text">출고후기</div>
+                                <img src="./img/aside-menu/link-arrow.png" alt="link-icon" class="icon">
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./car-event.html">
+                            <div class="item">
+                                <div class="text">이벤트</div>
+                                <img src="./img/aside-menu/link-arrow.png" alt="link-icon" class="icon">
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./car-rental.html">
+                            <div class="item">
+                                <div class="text">장기렌트 · 리스혜택</div>
+                                <img src="./img/aside-menu/link-arrow.png" alt="link-icon" class="icon">
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <!-- } -->
+
+        <main id="smooth-wrapper">
+            <article id="smooth-content">
+                <main class="sub sec_top car-event">
+                    
+                    <article class="content-arti">
+                       <div class="inner">
+                            <h2 class="sub-title">이벤트 안내</h2>
+                            <div class="event-tab-list">
+                                <a href="#" class="item active">진행중인 혜택</a>
+                                <a href="#" class="item">종료된 혜택</a>
+                            </div>
+
+                            
+                            <div class="menuBox">
+                                <ul class="menuList">
+                                    <li>
+                                        <a href="#" class="item"><img src="./img/boardImg/settings.png" alt="관리자"/> <p class="txt">관리자</p></a>
+                                    </li>
+                                    <li>
+                                        <button type="button" class="item"><img src="./img/boardImg/search.png" alt="검색"/> <p class="txt">검색</p></button>
+                                        <div class="subMenu">
+                                            <div class="searchBox">
+                                                <select class="searchList">
+                                                    <option value="제목">제목</option>
+                                                    <option value="내용">내용</option>
+                                                </select>
+                                                <div class="iptBox">
+                                                    <input type="text" placeholder="검색어를 입력해주세요." class="ipt"/>
+                                                    <button class="searchBtn"><img src="./img/boardImg/search.png" alt="검색"/></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="./write.html" class="item"><img src="./img/boardImg/write.png" alt="글쓰기"/> <p class="txt">글쓰기</p></a>
+                                    </li>
+                                    <li>
+                                        <button type="button" class="item"><img src="./img/boardImg/threedot.png" alt="편집"/> <p class="txt">편집</p></button>
+                                        <ul class="subMenu">
+                                            <li><button type="button" class="item">선택삭제</button></li>
+                                            <li><a href="#" class="item2">선택복사</a></li>
+                                            <li><a href="#" class="item2">선택이동</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                            <label>
+                                <input type="checkbox"/>&nbsp;&nbsp;<span>전체선택</span>
+                            </label>
+
+                            
+                            <ul class="event-list">
+                                <li>
+                                    <input type="checkbox"/>
+                                    <a href="./car-event-detail.html">
+                                        <div class="item">
+                                            <div class="label">new</div>
+                                            <div class="img-div" style="background-image: url('./img/sub/car-event/event-banner.png');"></div>
+                                            <div class="content-div">
+                                                <div class="title">2026 봄맞이 최대 30% 할인혜택</div>
+                                                <div class="date-div">2026. 04. 01 ~ 2026. 04. 30</div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <input type="checkbox"/>
+                                    <a href="./car-event-detail.html">
+                                        <div class="item">
+                                            <div class="label">new</div>
+                                            <div class="img-div" style="background-image: url('./img/sub/car-event/event-banner.png');"></div>
+                                            <div class="content-div">
+                                                <div class="title">2026 봄맞이 최대 30% 할인혜택</div>
+                                                <div class="date-div">2026. 04. 01 ~ 2026. 04. 30</div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <input type="checkbox"/>
+                                    <a href="./car-event-detail.html">
+                                        <div class="item">
+                                            <div class="label">new</div>
+                                            <div class="img-div" style="background-image: url('./img/sub/car-event/event-banner.png');"></div>
+                                            <div class="content-div">
+                                                <div class="title">2026 봄맞이 최대 30% 할인혜택</div>
+                                                <div class="date-div">2026. 04. 01 ~ 2026. 04. 30</div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <input type="checkbox"/>
+                                    <a href="./car-event-detail.html">
+                                        <div class="item">
+                                            <div class="label">new</div>
+                                            <div class="img-div" style="background-image: url('./img/sub/car-event/event-banner.png');"></div>
+                                            <div class="content-div">
+                                                <div class="title">2026 봄맞이 최대 30% 할인혜택</div>
+                                                <div class="date-div">2026. 04. 01 ~ 2026. 04. 30</div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <input type="checkbox"/>
+                                    <a href="./car-event-detail.html">
+                                        <div class="item">
+                                            <div class="label">new</div>
+                                            <div class="img-div" style="background-image: url('./img/sub/car-event/event-banner.png');"></div>
+                                            <div class="content-div">
+                                                <div class="title">2026 봄맞이 최대 30% 할인혜택</div>
+                                                <div class="date-div">2026. 04. 01 ~ 2026. 04. 30</div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <input type="checkbox"/>
+                                    <a href="./car-event-detail.html">
+                                        <div class="item">
+                                            <div class="label">new</div>
+                                            <div class="img-div" style="background-image: url('./img/sub/car-event/event-banner.png');"></div>
+                                            <div class="content-div">
+                                                <div class="title">2026 봄맞이 최대 30% 할인혜택</div>
+                                                <div class="date-div">2026. 04. 01 ~ 2026. 04. 30</div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <input type="checkbox"/>
+                                    <a href="./car-event-detail.html">
+                                        <div class="item">
+                                            <div class="label">new</div>
+                                            <div class="img-div" style="background-image: url('./img/sub/car-event/event-banner.png');"></div>
+                                            <div class="content-div">
+                                                <div class="title">2026 봄맞이 최대 30% 할인혜택</div>
+                                                <div class="date-div">2026. 04. 01 ~ 2026. 04. 30</div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <input type="checkbox"/>
+                                    <a href="./car-event-detail.html">
+                                        <div class="item">
+                                            <div class="label">new</div>
+                                            <div class="img-div" style="background-image: url('./img/sub/car-event/event-banner.png');"></div>
+                                            <div class="content-div">
+                                                <div class="title">2026 봄맞이 최대 30% 할인혜택</div>
+                                                <div class="date-div">2026. 04. 01 ~ 2026. 04. 30</div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <input type="checkbox"/>
+                                    <a href="./car-event-detail.html">
+                                        <div class="item">
+                                            <div class="label">new</div>
+                                            <div class="img-div" style="background-image: url('./img/sub/car-event/event-banner.png');"></div>
+                                            <div class="content-div">
+                                                <div class="title">2026 봄맞이 최대 30% 할인혜택</div>
+                                                <div class="date-div">2026. 04. 01 ~ 2026. 04. 30</div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <input type="checkbox"/>
+                                    <a href="./car-event-detail.html">
+                                        <div class="item">
+                                            <div class="label">new</div>
+                                            <div class="img-div" style="background-image: url('./img/sub/car-event/event-banner.png');"></div>
+                                            <div class="content-div">
+                                                <div class="title">2026 봄맞이 최대 30% 할인혜택</div>
+                                                <div class="date-div">2026. 04. 01 ~ 2026. 04. 30</div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <input type="checkbox"/>
+                                    <a href="./car-event-detail.html">
+                                        <div class="item">
+                                            <div class="label">new</div>
+                                            <div class="img-div" style="background-image: url('./img/sub/car-event/event-banner.png');"></div>
+                                            <div class="content-div">
+                                                <div class="title">2026 봄맞이 최대 30% 할인혜택</div>
+                                                <div class="date-div">2026. 04. 01 ~ 2026. 04. 30</div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <input type="checkbox"/>
+                                    <a href="./car-event-detail.html">
+                                        <div class="item">
+                                            <div class="label">new</div>
+                                            <div class="img-div" style="background-image: url('./img/sub/car-event/event-banner.png');"></div>
+                                            <div class="content-div">
+                                                <div class="title">2026 봄맞이 최대 30% 할인혜택</div>
+                                                <div class="date-div">2026. 04. 01 ~ 2026. 04. 30</div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class="paging_box">페이징 위치입니다.</div>
+                       </div>
+                    </article>
+
+
+                    <footer class="footer">
+                        <div class="inner">
+                            <img src="./img/footer/logo.png" alt="카슐랭 푸터 로고" class="logo">
+                            <div class="info-text-div">
+                                카슐랭은 20개 이상의 제휴 렌트사·캐피탈사와 함께<br/>
+                                투명한 견적 비교와 최적의 조건을 제공합니다.<br/>
+                                믿을 수 있는 사후 관리와 빠른 출고로<br/>
+                                합리적인 차량 이용을 지원합니다.
+                            </div>
+                            <ul class="menu-list">
+                                <li>
+                                    <a href="#"><div class="item">차량안내</div></a>
+                                </li>
+                                <li>
+                                    <a href="./make-car.html"><div class="item">내 차 만들기</div></a>
+                                </li>
+                                <li>
+                                    <a href="./car-event.html"><div class="item">이벤트</div></a>
+                                </li>
+                                <li>
+                                    <a href="./car-review.html"><div class="item">출고후기</div></a>
+                                </li>
+                                <li>
+                                    <a href="./car-planner.html"><div class="item">카플래너</div></a>
+                                </li>
+                                <li>
+                                    <a href="./car-rental.html"><div class="item">장기렌트 · 리스혜택</div></a>
+                                </li>
+                            </ul>
+
+                            <div class="company-info">
+                                <p>상호명 : 카슐랭</p>
+                                <p>대표자명 : 채수현</p>
+                                <p><a href="#" class="privacyPopupBtn">개인정보처리방침</a></p>
+                            </div>
+                            <div class="company-number">
+                                사업자등록번호 : 645-35-01032
+                            </div>
+                            <div class="copy-right">
+                                © carchelin. All rights reserved.
+                            </div>
+                    </footer>
+                    <!-- } -->
+
+                </main>
+            </article>
+        </main>
+
+
+
+         <!-- 우수 사원에게 상담받기 { -->
+         <section class="excellence-apply-popup"> <!--show 클래스 붙이면 노출-->
+            <article class="content-arti">
+                <img src="./img/excellence-apply-popup/label.png" alt="우수 사원에게 상담받기" class="label-img">
+                <div class="title">오동규 우수사원에게 상담받기</div>
+                <div class="content">선택하신 담당자가 직접 상담을 도와드립니다.</div>
+                <ul class="form-list">
+                    <li>
+                        <div class="label">이름</div>
+                        <div class="ipt-div">
+                            <input type="text" name="wr_name" required placeholder="이름을 입력해주세요" class="ipt">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="label">연락처</div>
+                        <div class="ipt-div">
+                            <input type="text" name="wr_subject" required placeholder="핸드폰 번호를 입력해주세요" class="ipt" oninput="phoneNumberCheck(this)">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="label">차종</div>
+                        <div class="ipt-div">
+                            <input type="text" name="wr_content" required placeholder="차종을 입력해주세요" class="ipt">
+                        </div>
+                    </li>
+                </ul>
+
+                <div class="agreeCheckDiv">
+                    <label>
+                        <input type="checkbox" id="agree1"/>
+                        <div class="textBox">개인정보 수집, 이용, 제공 동의 <span class="privacyPopupBtn">(확인)</span></div>
+                    </label>
+                    
+                </div>
+                <div class="agreeCheckDiv">
+                    <label>
+                        <input type="checkbox" id="agree2"/>
+                        <div class="textBox">개인정보 제 3자 제공 동의<span class="privacy3rdPopupBtn">(확인)</span></div>
+                    </label>
+                </div>
+                <div class="agreeCheckDiv">
+                    <label>
+                        <input type="checkbox" id="agree3"/>
+                        <div class="textBox">마케팅 활용 및 광고성 정보수신 동의 <span class="marketingPopupBtn">(확인)</span></div>
+                    </label>
+                </div>
+
+                <div class="btn-wrap">
+                    <button type="button" class="close-btn bottom-btn">닫기</button>
+                    <button type="button" class="apply-btn bottom-btn">상담받기</button>
+                </div>
+            </article>
+        </section>
+        <!-- }-->
+
+        <script>
+            $(document).ready(function(){
+                $('.apply-btn').click(function(){
+                    $('.excellence-apply-popup').addClass('show');
+                });
+            });
+        </script>
+
+
+        <!--개인정보처리방침 { -->
+        <section class="privacyPopup" id="privacyPopup">
+            <div class="inner">
+                <div class="contentWrap">
+                    <div class="titleBox">
+                        <span>개인정보 처리방침</span>
+                        <img src="./img/common/close-btn.png" alt="closeBtn" class="closeBtn">
+                    </div>
+                    <div class="contentBox">
+                        해당 홈페이지에 맞는 개인정보처리방침을 입력합니다.           
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- } -->
+
+        <!--개인정보 제 3자 제공 동의 { -->
+        <section class="privacyPopup" id="privacy3rdPopup">
+            <div class="inner">
+                <div class="contentWrap">
+                    <div class="titleBox">
+                        <span>개인정보 제 3자 동의</span>
+                        <img src="./img/common/close-btn.png" alt="closeBtn" class="closeBtn">
+                    </div>
+                    <div class="contentBox">
+                        해당 홈페이지에 맞는 개인정보 제 3자 동의 내용을 입력합니다.           
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--}-->
+
+        <!-- 마케팅 활용 및 광고성 정보수신 동의 { -->
+        <section class="privacyPopup" id="marketingPopup">
+            <div class="inner">
+                <div class="contentWrap">
+                    <div class="titleBox">
+                        <span>마케팅 활용 및 광고성 정보수신 동의</span>
+                        <img src="./img/common/close-btn.png" alt="closeBtn" class="closeBtn">
+                    </div>
+                    <div class="contentBox">
+                        해당 홈페이지에 맞는 마케팅 활용 및 광고성 정보수신 동의 내용을 입력합니다.           
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- } -->
+
+    </body>
+</html>
