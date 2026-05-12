@@ -1202,4 +1202,5 @@ footer .copy-right{ font-size: 14px; color: #777; }
     .sub.car-rental .step-arti .step-list .content{ font-size: 16px; }
 }
 
-
+/* .sub.car-rental .faq-section  */
+.sub.car-rental .faq-section { padding-bottom: 0; }
