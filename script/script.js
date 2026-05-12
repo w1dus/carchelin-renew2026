@@ -20,7 +20,221 @@ document.addEventListener("DOMContentLoaded", function(e){
     carDetailSlideHandler();
     makeCarSlideHandler();
     makeCarResultPopupHandler();
+    makeCarStepHandler();
 })
+
+
+const makeCarStepHandler = () => {
+    let index = 0; 
+    $('.sub.make-car .make-car-section .pn-btn-wrap .pn-btn.step-next-btn').click(function(){
+        if(index === 0){
+            const brand = $('.sub.make-car .make-car-section input[name="brand"]:checked').val();
+            if (!brand) {
+                alert('브랜드를 선택해주세요.');
+                return;
+            }
+        }else if(index === 1){
+            const model = $('.sub.make-car .make-car-section input[name="car-model"]:checked').val();
+            if (!model) {
+                alert('모델을 선택해주세요.');
+                return;
+            }
+        }else if(index === 2){
+            //연료
+            const fuel = $('.sub.make-car .make-car-section input[name="fuel"]:checked').val(); 
+            //모델
+            const trim = $('.sub.make-car .make-car-section input[name="car-trim"]:checked').val();
+            const trimDetail = $('.sub.make-car .make-car-section input[name="car-trim-detail"]:checked').val(); 
+            //외장 색상
+            const exteriorColor = $('.sub.make-car .make-car-section input[name="exterior-color"]:checked').val();
+            //내장 색상
+            const interiorColor = $('.sub.make-car .make-car-section input[name="interior-color"]:checked').val();
+            //차량 옵션
+            const carOption = $('.sub.make-car .make-car-section input[name="car-option"]:checked').val();
+            //계약 기간 
+            const contractPeriod = $('.sub.make-car .make-car-section input[name="contract-period"]:checked').val();
+            //주행 거리 
+            const mileage = $('.sub.make-car .make-car-section input[name="mileage"]:checked').val();
+            //보증조건 : 선납금
+            const prepayment = $('.sub.make-car .make-car-section input[name="prepayment"]:checked').val();
+            //보증 조건 : 보증금
+            const deposit = $('.sub.make-car .make-car-section input[name="deposit"]:checked').val();
+        
+            if (!fuel) {
+                alert('연료를 선택해주세요.');
+                return;
+            }else if(!trim) {
+                alert('모델을 선택해주세요.');
+                return;
+            }else if (!trimDetail) {
+                alert('모델을 선택해주세요.');
+                return;
+            }else if(!exteriorColor) {
+                alert('외장 색상을 선택해주세요.');
+                return;
+            }else if(!interiorColor) {
+                alert('내장 색상을 선택해주세요.');
+                return;
+            }else if(!carOption) {
+                alert('차량 옵션을 선택해주세요.');
+                return;
+            }else if(!contractPeriod) {
+                alert('계약 기간을 선택해주세요.');
+                return;
+            }else if(!mileage) {
+                alert('주행 거리를 선택해주세요.');
+                return;
+            }else if(!prepayment) {
+                alert('선납금을 선택해주세요.');
+                return;
+            }else if(!deposit) {
+                alert('보증금을 선택해주세요.');
+                return;
+            }
+
+        }
+        index++;
+        scrollToTop()
+        $('.sub.make-car .make-car-section .step-list > li').removeClass('is-active');
+        $('.sub.make-car .make-car-section .step-list > li').eq(index).addClass('is-active');
+    })
+    $('.sub.make-car .make-car-section .pn-btn-wrap .pn-btn.step-prev-btn').click(function(){
+        index--;
+        $('.sub.make-car .make-car-section .step-list > li').removeClass('is-active');
+        $('.sub.make-car .make-car-section .step-list > li').eq(index).addClass('is-active');
+        scrollToTop()
+    })
+
+    // 선택하는 값에 따라 결과창에 다른 결과화면 뿌리기(AJAX로 추가된 요소도 대응)
+    $(document).on('change', '.sub.make-car .make-car-section input[name="brand"]', function () {
+        //브랜드 이름
+        const selectedBrand = $(this).closest('label').find('.brand-name').text().trim();
+        $('.sub.make-car .result-content .brand').text(selectedBrand);
+        $('.sub.make-car .result-content-box .content-list > li .content .result-car-name .brand').text(selectedBrand);
+    });
+    $(document).on('change', '.sub.make-car .make-car-section input[name="car-model"]', function () {
+        //차 이름
+        const selectedCarModel = $(this).closest('label').find('.brand-name').text().trim();
+        $('.sub.make-car .result-content .car-name').text(selectedCarModel);
+        $('.sub.make-car .result-content-box .content-list > li .content .result-car-name .name').text(selectedCarModel);
+
+        //차 이미지
+        const selectedCarImage = $(this).closest('label').find('.logo-div').css('background-image').trim();
+        $('.sub.make-car .result-img').css('background-image', selectedCarImage);
+    });
+
+    // 트림 상세 선택 시 선택한 금액을 상위 트림 가격 영역에 표시
+    $(document).on('change', '.sub.make-car .make-car-section input[name="car-trim-detail"]', function () {
+        const trimName = $(this).closest('label').find('.brand-name').text().trim();
+        const price = Number($(this).closest('label').find('.price').data('price'));
+        const priceText = price.toLocaleString('ko-KR') + '원~';
+        $('.sub.make-car .make-car-section .slide-choice-wrap .model .text-wrap .price').text('');
+        $(this)
+            .closest('.slide-choice-wrap')
+            .children('.model')
+            .find('.text-wrap .price')
+            .text(priceText);
+        $('.sub.make-car .result-content-box .content-list .price-box .name').text(trimName);
+        $('.sub.make-car .result-content-box .content-list .price-box .price').text(price.toLocaleString('ko-KR') + '원');
+        $('.sub.make-car #car-price').text(price.toLocaleString('ko-KR') + '원');
+        totalPriceHandler();
+    });
+    
+    //연료
+    $(document).on('change', '.sub.make-car .make-car-section input[name="fuel"]', function () {
+        const fuel = $(this).val();
+        $('.sub.make-car #fuel-name').text(fuel);
+    });
+
+    //컬러 및 옵션
+    //외장색상
+    $(document).on('change', '.sub.make-car .make-car-section input[name="exterior-color"]', function () {
+        const exteriorColor = $(this).val();
+        const backgroundColor = $(this).closest('label').find('.color-chart').css('background-color');
+        const price = Number($(this).data('price'));
+        // console.log(exteriorColor, backgroundColor)
+        $('.sub.make-car #exterior-color-div').css('background-color', backgroundColor);
+        $('.sub.make-car #exterior-color-div + .car-out-color').text(exteriorColor);
+        $('.sub.make-car #exterior-color-name').text(exteriorColor);
+        $('.sub.make-car #exterior-color-price').text(price.toLocaleString('ko-KR') + '원');
+        colorPriceHandler();
+    });
+
+    //내장색상
+    $(document).on('change', '.sub.make-car .make-car-section input[name="interior-color"]', function () {
+        const interiorColor = $(this).val();
+        const backgroundColor = $(this).closest('label').find('.color-chart').css('background-color');
+        const price = Number($(this).data('price'));
+        $('.sub.make-car #interior-color-div').css('background-color', backgroundColor);
+        $('.sub.make-car #interior-color-div + .car-out-color').text(interiorColor);
+        $('.sub.make-car #interior-color-name').text(interiorColor);
+        $('.sub.make-car #interior-color-price').text(price.toLocaleString('ko-KR') + '원');
+        colorPriceHandler()
+    });
+
+    //차량옵션 
+    $(document).on('change', '.sub.make-car .make-car-section input[name="car-option"]', function () {
+        const carOption = $(this).val();
+        const price = Number($(this).data('price'));
+        $('.sub.make-car #car-option-name').text(carOption);
+        $('.sub.make-car #car-option-price').text(price.toLocaleString('ko-KR') + '원');
+        colorPriceHandler();
+    })
+
+
+    //내장색상 + 외장색상 + 차량 옵션 가격 더하기 
+    function colorPriceHandler() {
+        const OutPrice = Number($('.sub.make-car .make-car-section input[name="exterior-color"]:checked').data('price') || 0);
+        const InnerPrice = Number($('.sub.make-car .make-car-section input[name="interior-color"]:checked').data('price') || 0);
+        const CarOptionPrice = Number($('.sub.make-car .make-car-section input[name="car-option"]:checked').data('price') || 0);
+        let colorPrice = OutPrice + InnerPrice + CarOptionPrice;
+        $('.sub.make-car #color-price').text(colorPrice.toLocaleString('ko-KR') + '원');
+        totalPriceHandler();
+
+    }
+
+
+
+    //주요 계약 조건
+    $(document).on('change', '.sub.make-car .make-car-section input[name="contract-period"]', function () {
+        const contractPeriod = $(this).val();
+        $('.sub.make-car #contract-period-name').text(contractPeriod);
+    })
+    $(document).on('change', '.sub.make-car .make-car-section input[name="mileage"]', function () {
+        const mileage = $(this).val();
+        $('.sub.make-car #mileage-name').text(mileage);
+    })
+    $(document).on('change', '.sub.make-car .make-car-section input[name="prepayment"]', function () {
+        const prepayment = $(this).val();
+        $('.sub.make-car #prepayment-name').text(prepayment);
+    })
+    $(document).on('change', '.sub.make-car .make-car-section input[name="deposit"]', function () {
+        const deposit = $(this).val();
+        $('.sub.make-car #deposit-name').text(deposit);
+    })
+
+    //총액
+    function totalPriceHandler() {
+        const carPrice = getPriceNumber($('.sub.make-car #car-price').text());
+        const colorPrice = getPriceNumber($('.sub.make-car #color-price').text());
+        const totalPrice = carPrice + colorPrice;
+        $('.sub.make-car #total-price').text(totalPrice.toLocaleString('ko-KR') + '원');
+    }
+
+    function getPriceNumber(priceText) {
+        return Number(String(priceText).replace(/[^0-9]/g, '')) || 0;
+    }
+}
+
+const scrollToTop = () => {
+    const smoother = window.ScrollSmoother && ScrollSmoother.get && ScrollSmoother.get();
+    if (smoother) {
+        smoother.scrollTo(0, true);
+    } else {
+        $('html, body').stop().animate({ scrollTop: 0 }, 0);
+    }
+}
+
 
 const makeCarResultPopupHandler = () => {
     $('.make-car-result-popup .content-arti .btn-wrap .bottom-btn.close-btn').click(function(){

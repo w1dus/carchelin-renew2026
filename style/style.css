@@ -1124,7 +1124,7 @@ footer .copy-right{ font-size: 14px; color: #777; }
 
 .sub.make-car .result-title{ margin-bottom: 10px; }
 .sub.make-car .result-content{ font-size: 20px; }
-.sub.make-car .result-img{ aspect-ratio: 383/173; background-size: cover; background-repeat: no-repeat; background-position: center; display: block; margin: 20px auto; max-width: 80%;  }
+.sub.make-car .result-img{ aspect-ratio: 383/173; background-size: contain; background-repeat: no-repeat; background-position: center; display: block; margin: 20px auto; max-width: 80%;  }
 .sub.make-car .gray-box{ background-color: #F2F3F7; height: 10px; }
 .sub.make-car .result-content-box{ padding: 20px 0; }
 .sub.make-car .result-content-box .title-wrap{ margin-bottom: 20px; display: flex; align-items: center; gap: 10px; justify-content: space-between; }
