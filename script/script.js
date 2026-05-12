@@ -18,7 +18,38 @@ document.addEventListener("DOMContentLoaded", function(e){
     excellenceApplyPopupHandler();
     floatingApplyHandler();
     carDetailSlideHandler();
+    makeCarSlideHandler();
+    makeCarResultPopupHandler();
 })
+
+const makeCarResultPopupHandler = () => {
+    $('.make-car-result-popup .content-arti .btn-wrap .bottom-btn.close-btn').click(function(){
+        $('.make-car-result-popup').removeClass('show');
+    })
+    $('.result-popup-show-btn').click(function(){
+        $('.make-car-result-popup').addClass('show');
+    })
+}
+
+const makeCarSlideHandler = () => {
+    $('.sub.make-car .brand-toggle-wrap .brand-toggle-title').click(function(){
+        $(this).closest('.brand-toggle-wrap').toggleClass('hide');
+        $(this).siblings('.brand-toggle-content').slideToggle();
+    })
+
+    $('.sub.make-car .step3 .text-content-wrap .text-label-wrap .slide-choice-wrap .model input[type="radio"]').change(function(){
+        const $slideChoiceWrap = $(this).closest('.slide-choice-wrap');
+        const $subList = $slideChoiceWrap.children('.sub-list');
+        const $siblingSubList = $slideChoiceWrap.siblings('.slide-choice-wrap').children('.sub-list');
+
+        $siblingSubList.find('input[type="radio"], input[type="checkbox"]').prop('checked', false);
+        $siblingSubList.slideUp();
+
+        if ($(this).is(':checked')) {
+            $subList.stop(true, true).slideToggle();
+        }
+    })
+}
 
 const carDetailSlideHandler = () => {
     var swiper = new Swiper(".sub.car-detail .section5 .swiper", {
